@@ -19,7 +19,7 @@ body {
 
 header {
 	position: relative;
-	z-index: 2;
+	z-index: 1;
 
 	height: 70px;
 	line-height: 70px;
@@ -73,90 +73,246 @@ header .menu ul > li > a:hover {
 	/*padding: 60px 10% 0;*/
 }
 
-.content section#first {
+.content p {
+	font-size: 20px;
+	line-height: 1.6;
+}
+
+/**/
+.main-page section#first {
 	position: relative;
 	height: 500px;
 	width: 100%;
 	height: calc(100vh - 70px);
 }
 
-.content section#first .bg {
+.main-page section#first .bg {
 	position: absolute;
 	top: 0; bottom: 0; left: 0; right: 0;
 	overflow: hidden;
 }
 
-.content section#first .bg img {
+.main-page section#first .bg img {
 	width: 100%;
 	height: auto;
 }
 
-.content section#first .bg .overlay {
+.main-page section#first .bg:after {
+	content: '';
+	display: block;
 	position: absolute;
 	top: 0; bottom: 0; right: 0; left: 0;
 	background-color: #000;
 	opacity: 0.85;
 }
 
-.content section#first .text {
+.main-page section#first .text {
 	position: relative;
-	z-index: 1;
 	text-align: center;
 
 	padding: calc(((100vh - 70px) / 2) - 128px) 10% 0;
 }
 
-.content p {
-	font-size: 20px;
-	line-height: 1.6;
-}
-
+/**/
 .users-page section#main {
 	padding: 60px 10% 0;
 }
 
-.users-page section#wrap {
-
-}
-
-.users-page section#main table{
+.users-page table {
 	margin: 0 auto;
-}
-
-table {
 	border-collapse: collapse;
 	width: 100%;
 	-webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.3);
   box-shadow: 0 5px 25px 0 rgba(0,0,0,0.3);
 }
 
-th, td {
+.users-page th, td {
 	padding: 8px;
 	text-align: center;
 }
 
-th {
+.users-page th {
   background-color: #ff5860;
   color: #fff;
   text-transform: uppercase;
 }
 
-tr {
+.users-page tr {
 	background-color: #26262c;
 	height: 40px;
 	line-height: 40px;
 }
 
-tr:nth-child(even) {
+.users-page tr:nth-child(even) {
 	background-color: #2b2b31
 }
 
-td a {
+.users-page td a {
 	-webkit-transition: color 0.1s ease;
 	-o-transition: color 0.1s ease;
 	transition: color 0.1s ease;
 }
 
-td a:hover {
+.users-page td a:hover {
 	color: #ffa458;
+}
+
+/**/
+.films-page section#main {
+	padding: 60px 10% 0;
+}
+.films-page .item {
+	float: left;
+	width: calc((100%/3) - 30px);
+	margin-left: 30px;
+}
+
+.films-page .card:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: -15px;bottom: -85px;right: -15px;left: -15px;
+	background: #2b2b31;
+  -webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 5px 25px 0 rgba(0,0,0,0.3);
+}
+.films-page .card {
+	position: relative;
+  margin-bottom: 30px;
+  width: 210px;
+  height: 304.7px;
+}
+.films-page .card-cover {
+  position: relative;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.films-page .card-cover img {
+  width: 100%;
+}
+.films-page .card-cover:before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0; left: 0; right: 0; bottom: 2px; /*border affects 2px*/
+  background: #000;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.films-page .card-cover:hover:before {
+  opacity: 0.65;
+}
+
+.films-page .card-cover:hover .card-play {
+  opacity: 1;
+}
+
+.films-page .card-play {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin: -28px 0 0 -28px;
+  z-index: 1;
+  font-size: 28px;
+  color: #fff;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  transition: 0.4s ease;
+  opacity: 0;
+}
+.films-page .card-play i {
+  margin: 3px 0 0 3px;
+}
+
+.films-page .card-content {
+ 	position: relative;
+  display: block;
+  margin-top: 10px;
+}
+.films-page .card-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.films-page .card-category {
+	display: block;
+}
+.films-page .card-category a {
+  font-size: 14px;
+  position: relative;
+  color: #ff5860;
+  margin-right: 3px;
+}
+
+.films-page .card-category a:last-child {
+  margin-right: 0;
+}
+
+.films-page .card-rate {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2px;
+}
+.films-page .card-rate i {
+  margin-right: 5px;
+  font-size: 85%;
+}
+.films-page .card-rate i:before {
+  color: #ff5860;
+}
+
+/**/
+.about-page section#main {
+	position: relative;
+	height: calc(100vh - 70px);
+}
+
+.about-page section#main .bg {
+	position: absolute;
+	top: 0;bottom: 0;right: 0;left: 0;
+	overflow: hidden;
+}
+
+.about-page section#main .bg img{
+	max-width: 100%;
+}
+
+.about-page section#main .bg:after {
+	content: '';
+	display: block;
+	position: absolute;
+	background: #000;
+	top: 0;bottom: 0;right: 0;left: 0;
+	opacity: 0.8;
+}
+
+.about-page section#main .text {
+	position: relative;
+  text-align: center;
+	padding: calc(((100vh - 70px) / 2) - 0px) 10% 0;
 }
