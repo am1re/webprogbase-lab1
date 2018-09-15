@@ -13,6 +13,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	font-size: 16px;
+	line-height: 1.1;
 	color: #ddd;
 	background-color: #404045;
 }
@@ -315,4 +316,98 @@ header .menu ul > li > a:hover {
 	position: relative;
   text-align: center;
 	padding: calc(((100vh - 70px) / 2) - 0px) 10% 0;
+}
+
+/**/
+.film-page .content,
+.user-page .content {
+	padding: 60px 10% 0;
+}
+
+.film-page .film,
+.user-page .user {
+	position: relative;
+	width: 800px;
+	height: 380px;
+	margin: 0 auto;
+}
+
+.film-page .film {
+	height: 400px;
+}
+
+.film-page .film:before,
+.user-page .user:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: -25px;right: -25px;left: -25px;bottom: 0;
+	background: #2b2b31;
+	-webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 5px 25px 0 rgba(0,0,0,0.3);
+}
+
+.film-page .film-image,
+.user-page .user-image,
+.film-page .film-content,
+.user-page .user-content{
+	float: left;
+	position: relative;
+}
+
+.film-page .film-image,
+.user-page .user-image {
+	width: 35%;
+}
+
+.film-page .film-content,
+.user-page .user-content{
+	width: 60%;
+}
+
+.film-page .film-image .image-wrap,
+.user-page .user-image .image-wrap{
+	width: 250px;
+	height: auto;
+
+	-webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 5px 25px 0 rgba(0,0,0,0.3);
+}
+
+.film-page .film-image .image-wrap img,
+.user-page .user-image .image-wrap img{
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.film-page .film-labels > *,
+.user-page .user-labels > *{
+	display: block;
+	margin-top: 10px;
+}
+.film-page .film-labels > *:first-child,
+.user-page .user-labels > *:first-child{
+	margin-top: 0;
+}
+
+.film-page .film-labels .fullname,
+.user-page .user-labels .fullname{
+	font-size: 24px;
+}
+
+.film-page .film-labels .genre {
+	color: #ff5860;
+}
+
+.film-page .film-labels i:before {
+	color: #ff5860;
+}
+
+
+.film-page .description,
+.user-page .user-bio {
+	margin-top: 15px;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.5;
 }
